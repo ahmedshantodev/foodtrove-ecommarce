@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Container from "../layout/Container";
 import Flex from "../layout/Flex";
 import Input from "../layout/Input";
@@ -12,6 +12,14 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [allCategoryOpen, setAllCategoryOpen] = useState(false);
+  let categoryRef = useRef();
+  useEffect(() => {
+    document.body.addEventListener("click", (e) => {
+      if (!categoryRef.current.contains(e.target)) {
+        setAllCategoryOpen(false);
+      }
+    });
+  }, []);
 
   return (
     <section className="">
@@ -32,7 +40,7 @@ const Header = () => {
                 "py-3 px-4 w-[424px] outline-none font-poppins placeholder:text-secondary-text text-secondary-text rounded-bl-md rounded-tl-lg"
               }
             />
-            <div className="relative">
+            <div ref={categoryRef} className="relative">
               <Button
                 onClick={() => setAllCategoryOpen(!allCategoryOpen)}
                 className={
@@ -47,7 +55,8 @@ const Header = () => {
                 />
               </Button>
               <div
-                className={`bg-white w-[150px] text-center py-2.5 absolute top-[30px] left-2/4 -translate-x-2/4 rounded-[5px] shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] transition-all duration-150 ease-in space-y-2 [&>*:nth-last-child(1)]:text-primary-color ${
+                onClick={() => setAllCategoryOpen(!allCategoryOpen)}
+                className={`bg-white z-30 w-[150px] text-center py-4 absolute top-[30px] left-2/4 -translate-x-2/4 rounded-[5px] shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] transition-all duration-150 ease-in space-y-2 [&>*:nth-last-child(1)]:text-primary-color ${
                   allCategoryOpen
                     ? "visible opacity-100 translate-y-5 "
                     : "invisible opacity-0 translate-y-0 "
