@@ -56,7 +56,7 @@ const Category = () => {
   // useState ta dynamic kora hoynay
   const [cetegoryOpen, setCategoryOpen] = useState("cake & milk");
   return (
-    <section className="pt-[100px] mb-10 relative">
+    <section className="pt-[100px] relative">
       <Image
         imageLink={mashroom}
         altText={"random-image"}
