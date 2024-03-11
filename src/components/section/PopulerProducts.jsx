@@ -10,11 +10,19 @@ import { Link } from "react-router-dom";
 import ProductCardOne from "../layout/ProductCardOne";
 import { profuctInfo } from "../../Demo Data/ProductDetails";
 import carret from "../../../public/images/carret.png";
+import sideImage2 from "../../../public/images/side-image-2.png";
+import sideImage3 from "../../../public/images/side-image-3.png";
 import one from "../../../public/images/one.png";
 import two from "../../../public/images/two.png";
 import three from "../../../public/images/three.png";
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+
 const PopulerProducts = () => {
+  const [categoryItemOpen, setCategoryItemOpen] = useState("all");
+  const [dotActive, setDotActive] = useState(0);
+
   let category = [
     { name: "all" },
     { name: "snake" },
@@ -23,7 +31,57 @@ const PopulerProducts = () => {
     { name: "bakery" },
   ];
 
-  const [categoryItemOpen, setCategoryItemOpen] = useState("all");
+  var settings = {
+    arrows: false,
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+    beforeChange: (prev, next) => {
+      setDotActive(next);
+    },
+    appendDots: (dots) => (
+      <div
+        style={{
+          position: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
+          bottom: "-25px",
+        }}
+      >
+        <ul style={{ display: "flex" }}> {dots} </ul>
+      </div>
+    ),
+    customPaging: (i) => (
+      <div
+        style={
+          i == dotActive
+            ? {
+                width: "10px",
+                height: "10px",
+                margin: "3px",
+                backgroundColor: "#f53e32",
+                border: "1px #f53e32 solid",
+                borderRadius: "50%",
+              }
+            : {
+                width: "10px",
+                height: "10px",
+                margin: "3px",
+                backgroundColor: "white",
+                border: "1px #f53e32 solid",
+                borderRadius: "50%",
+                cursor: "pointer",
+              }
+        }
+      >
+        {}
+      </div>
+    ),
+  };
 
   return (
     <section className="mt-[100px] relative">
@@ -31,6 +89,16 @@ const PopulerProducts = () => {
         imageLink={carret}
         altText={"random-image"}
         className={"absolute top-[30%] left-[5%] animate-pulse"}
+      />
+      <Image
+        imageLink={sideImage2}
+        altText={"random-image"}
+        className={"absolute top-[77%] left-[10%] animate-pulse"}
+      />
+      <Image
+        imageLink={sideImage3}
+        altText={"random-image"}
+        className={"absolute top-[92%] right-[4%] animate-pulse"}
       />
       <Container>
         <div className="text-center">
@@ -96,29 +164,31 @@ const PopulerProducts = () => {
             </Flex>
           </div>
         </Flex>
-        <Flex className={"justify-between gap-x-6 items-center mt-16"}>
-          <Link className="w-1/3">
-            <Image
-              imageLink={one}
-              altText={"random-image"}
-              className={"w-full"}
-            />
-          </Link>
-          <Link className="w-1/3">
-            <Image
-              imageLink={two}
-              altText={"random-image"}
-              className={"w-full"}
-            />
-          </Link>
-          <Link className="w-1/3">
-            <Image
-              imageLink={three}
-              altText={"random-image"}
-              className={"w-full"}
-            />
-          </Link>
-        </Flex>
+        <div className="mt-[90px]">
+          <Slider {...settings}>
+            <Link className="pr-6">
+              <Image
+                imageLink={one}
+                altText={"random-image"}
+                className={"w-full"}
+              />
+            </Link>
+            <Link className="pr-6">
+              <Image
+                imageLink={two}
+                altText={"random-image"}
+                className={"w-full"}
+              />
+            </Link>
+            <Link className="pr-6">
+              <Image
+                imageLink={three}
+                altText={"random-image"}
+                className={"w-full"}
+              />
+            </Link>
+          </Slider>
+        </div>
       </Container>
     </section>
   );
