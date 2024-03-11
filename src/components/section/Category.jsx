@@ -9,6 +9,9 @@ import Paragraph from "../layout/Paragraph";
 import { Link } from "react-router-dom";
 import mashroom from "../../../public/images/mashroom.png";
 
+import itemOne from "../../../public/images/category image one.png"
+import itemTwo from "../../../public/images/category image two.png"
+
 const Category = () => {
   let categoryInfo = [
     {
@@ -23,32 +26,32 @@ const Category = () => {
       name: "fresh meat",
       item: "(30 items)",
       images: [
-        { link: "../../../public/images/category image one.png", path: "" },
-        { link: "../../../public/images/category image two.png", path: "" },
+        { link: itemOne, path: "" },
+        { link: itemTwo, path: "" },
       ],
     },
     {
       name: "vegetables",
       item: "(25 items)",
       images: [
-        { link: "../../../public/images/category image two.png", path: "" },
-        { link: "../../../public/images/category image one.png", path: "" },
+        { link: itemTwo, path: "" },
+        { link: itemOne, path: "" },
       ],
     },
     {
       name: "apple & mango",
       item: "(45 items)",
       images: [
-        { link: "../../../public/images/category image one.png", path: "" },
-        { link: "../../../public/images/category image two.png", path: "" },
+        { link: itemOne, path: "" },
+        { link: itemTwo, path: "" },
       ],
     },
     {
       name: "stawberry",
       item: "(68 items)",
       images: [
-        { link: "../../../public/images/category image two.png", path: "" },
-        { link: "../../../public/images/category image one.png", path: "" },
+        { link: itemTwo, path: "" },
+        { link: itemOne, path: "" },
       ],
     },
   ];
