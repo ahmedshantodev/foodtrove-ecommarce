@@ -18,8 +18,8 @@ const Category = () => {
       name: "cake & milk",
       item: "(65 items)",
       images: [
-        { link: "../../../public/images/category image two.png", path: "" },
-        { link: "../../../public/images/category image one.png", path: "" },
+        { link: itemTwo, path: "" },
+        { link: itemOne, path: "" },
       ],
     },
     {
