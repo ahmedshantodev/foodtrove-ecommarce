@@ -20,7 +20,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 
 const PopulerProducts = () => {
-  const [categoryItemOpen, setCategoryItemOpen] = useState("all");
   const [dotActive, setDotActive] = useState(0);
 
   let category = [
@@ -30,6 +29,7 @@ const PopulerProducts = () => {
     { name: "fruit" },
     { name: "bakery" },
   ];
+  const [categoryItemOpen, setCategoryItemOpen] = useState(category.at(0).name);
 
   var settings = {
     arrows: false,

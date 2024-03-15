@@ -56,8 +56,8 @@ const Category = () => {
     },
   ];
 
-  // useState ta dynamic kora hoynay
-  const [cetegoryOpen, setCategoryOpen] = useState("cake & milk");
+  const [cetegoryOpen, setCategoryOpen] = useState(categoryInfo.at(0).name);
+
   return (
     <section className="pt-[100px] relative">
       <Image
