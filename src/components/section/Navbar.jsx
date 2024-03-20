@@ -5,7 +5,9 @@ import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import { FiChevronDown } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 import { RiPhoneLine } from "react-icons/ri";
+import { FaPhone } from "react-icons/fa6";
 import { TbPhone } from "react-icons/tb";
+import { MdOutlineLocalPhone } from "react-icons/md";
 const Navbar = () => {
   let navigation = [
     {
@@ -101,7 +103,7 @@ const Navbar = () => {
             href="tel:+1234567890"
             className="flex items-center gap-[5px] font-poppins text-[15px]"
           >
-            <TbPhone className="text-[18px]" /> +123 ( 456 ) ( 7890 )
+            <TbPhone className="text-[20px] mb-1" /> +123 ( 456 ) ( 7890 )
           </a>
         </Flex>
       </Container>

@@ -1,13 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       maxWidth: {
-        "container": "1320px",
+        container: "1320px",
       },
       colors: {
         "primary-color": "#F53E32",
@@ -19,12 +16,15 @@ export default {
         "secondary-text": "#777777",
       },
       fontFamily: {
-        "poppins": ["Poppins", "sans-serif"],
-        "quicksand": ["Quicksand", "sans-serif"],
-        "arial": ["Open Sans", "sans-serif"],
-        "lato": ["Lato", "sans-serif"],                                      
-      }
+        poppins: ["Poppins", "sans-serif"],
+        quicksand: ["Quicksand", "sans-serif"],
+        arial: ["Open Sans", "sans-serif"],
+        lato: ["Lato", "sans-serif"],
+      },
+      backgroundImage: {
+        "great-deal-bg": "url('./public/images/great deal bg image.png')",
+      },
     },
   },
   plugins: [],
-}
+};
