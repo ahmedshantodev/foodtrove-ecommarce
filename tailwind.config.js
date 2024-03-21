@@ -22,7 +22,7 @@ export default {
         lato: ["Lato", "sans-serif"],
       },
       backgroundImage: {
-        "great-deal-bg": "url('./public/images/great deal bg image.png')",
+        "great-deal-bg": "url('/public/images/great deal bg image.png')",
       },
     },
   },
