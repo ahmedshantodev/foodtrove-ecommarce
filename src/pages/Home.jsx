@@ -4,7 +4,7 @@ import Category from "../components/section/Category";
 import PopulerProducts from "../components/section/PopulerProducts";
 import ExtraService from "../components/section/ExtraService";
 import GreatDeal from "../components/section/GreatDeal";
-import FoodImageSlide from "../components/section/FoodImageSlide";
+import FoodListBox from "../components/section/FoodListBox";
 import CustomerReview from "../components/section/CustomerReview";
 
 const Home = () => {
@@ -15,8 +15,8 @@ const Home = () => {
       <PopulerProducts />
       <ExtraService />
       <GreatDeal />
-      <FoodImageSlide />
-      {/* <CustomerReview /> */}
+      <FoodListBox />
+      <CustomerReview />
     </>
   );
 };

@@ -5,8 +5,9 @@ import three from "/public/images/Food-slide-three.png";
 import sideImage from "/public/images/side-image-5.png";
 import two from "/public/images/Food-slide-two.png";
 import Image from "../layout/Image";
+import { Link } from "react-router-dom";
 
-const FoodImageSlide = () => {
+const FoodListBox = () => {
   const [itemOpen, setItemOpen] = useState("three");
 
   return (
@@ -14,7 +15,7 @@ const FoodImageSlide = () => {
       <Image
         imageLink={sideImage}
         altText={"random-image"}
-        className={"absolute top-2/4 -translate-y-2/4 right-[3%]"}
+        className={"absolute top-2/4 -translate-y-2/4 right-[3%] animate-pulse"}
       />
       <Container>
         <Flex className={"justify-between gap-x-6 h-[475px]"}>
@@ -24,13 +25,15 @@ const FoodImageSlide = () => {
               itemOpen == "one" ? "w-2/4" : "w-1/4"
             } duration-300 cursor-pointer`}
           >
-            <Image
-              imageLink={three}
-              altText={"random-image"}
-              className={
-                "w-full rounded-[5px] object-cover object-left h-[100%]"
-              }
-            />
+            <Link to={itemOpen == "one" ? "/category" : ""}>
+              <Image
+                imageLink={three}
+                altText={"random-image"}
+                className={
+                  "w-full rounded-[6px] object-cover object-left h-[100%]"
+                }
+              />
+            </Link>
           </div>
           <div
             onClick={() => setItemOpen("two")}
@@ -38,13 +41,15 @@ const FoodImageSlide = () => {
               itemOpen == "two" ? "w-2/4" : "w-1/4"
             } duration-300 cursor-pointer`}
           >
-            <Image
-              imageLink={three}
-              altText={"random-image"}
-              className={
-                "w-full rounded-[5px] object-cover object-left h-[100%]"
-              }
-            />
+            <Link to={itemOpen == "two" ? "/category" : ""}>
+              <Image
+                imageLink={three}
+                altText={"random-image"}
+                className={
+                  "w-full rounded-[6px] object-cover object-left h-[100%]"
+                }
+              />
+            </Link>
           </div>
           <div
             onClick={() => setItemOpen("three")}
@@ -52,11 +57,15 @@ const FoodImageSlide = () => {
               itemOpen == "three" ? "w-2/4" : "w-1/4"
             } duration-300 cursor-pointer`}
           >
-            <Image
-              imageLink={three}
-              altText={"random-image"}
-              className={"w-full rounded-[5px] object-cover object-left h-full"}
-            />
+            <Link to={itemOpen == "three" ? "/category" : ""}>
+              <Image
+                imageLink={three}
+                altText={"random-image"}
+                className={
+                  "w-full rounded-[6px] object-cover object-left h-full"
+                }
+              />
+            </Link>
           </div>
         </Flex>
       </Container>
@@ -64,4 +73,4 @@ const FoodImageSlide = () => {
   );
 };
 
-export default FoodImageSlide;
+export default FoodListBox;
