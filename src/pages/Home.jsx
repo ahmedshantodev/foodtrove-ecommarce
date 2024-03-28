@@ -6,6 +6,7 @@ import ExtraService from "../components/section/ExtraService";
 import GreatDeal from "../components/section/GreatDeal";
 import FoodListBox from "../components/section/FoodListBox";
 import CustomerReview from "../components/section/CustomerReview";
+import LatestNews from "../components/section/LatestNews";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <GreatDeal />
       <FoodListBox />
       <CustomerReview />
+      <LatestNews />
     </>
   );
 };

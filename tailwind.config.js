@@ -20,6 +20,7 @@ export default {
         quicksand: ["Quicksand", "sans-serif"],
         arial: ["Open Sans", "sans-serif"],
         lato: ["Lato", "sans-serif"],
+        manrope: ["Manrope", "sans-serif"],
       },
       backgroundImage: {
         "great-deal-bg": "url('/public/images/great deal bg image.png')",

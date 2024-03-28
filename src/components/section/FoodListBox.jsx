@@ -8,65 +8,58 @@ import Image from "../layout/Image";
 import { Link } from "react-router-dom";
 
 const FoodListBox = () => {
-  const [itemOpen, setItemOpen] = useState("three");
+  const [itemOpen, setItemOpen] = useState(2);
+
+  let listItem = [
+    {
+      id: 1,
+      image: three,
+      imageAltText: "random-food-image",
+      path: "/category",
+    },
+    {
+      id: 2,
+      image: three,
+      imageAltText: "random-food-image",
+      path: "/category",
+    },
+    {
+      id: 3,
+      image: three,
+      imageAltText: "random-food-image",
+      path: "/category",
+    },
+  ];
 
   return (
-    <section className="py-[100px] relative">
+    <section className="pt-[100px] relative">
       <Image
         imageLink={sideImage}
         altText={"random-image"}
         className={"absolute top-2/4 -translate-y-2/4 right-[3%] animate-pulse"}
       />
       <Container>
+        {/* hight ta dynamin kora hoynay */}
         <Flex className={"justify-between gap-x-6 h-[475px]"}>
-          <div
-            onClick={() => setItemOpen("one")}
-            className={`${
-              itemOpen == "one" ? "w-2/4" : "w-1/4"
-            } duration-300 cursor-pointer`}
-          >
-            <Link to={itemOpen == "one" ? "/category" : ""}>
-              <Image
-                imageLink={three}
-                altText={"random-image"}
-                className={
-                  "w-full rounded-[6px] object-cover object-left h-[100%]"
-                }
-              />
-            </Link>
-          </div>
-          <div
-            onClick={() => setItemOpen("two")}
-            className={`${
-              itemOpen == "two" ? "w-2/4" : "w-1/4"
-            } duration-300 cursor-pointer`}
-          >
-            <Link to={itemOpen == "two" ? "/category" : ""}>
-              <Image
-                imageLink={three}
-                altText={"random-image"}
-                className={
-                  "w-full rounded-[6px] object-cover object-left h-[100%]"
-                }
-              />
-            </Link>
-          </div>
-          <div
-            onClick={() => setItemOpen("three")}
-            className={`${
-              itemOpen == "three" ? "w-2/4" : "w-1/4"
-            } duration-300 cursor-pointer`}
-          >
-            <Link to={itemOpen == "three" ? "/category" : ""}>
-              <Image
-                imageLink={three}
-                altText={"random-image"}
-                className={
-                  "w-full rounded-[6px] object-cover object-left h-full"
-                }
-              />
-            </Link>
-          </div>
+          {listItem.map((item, index) => (
+            <div
+              key={item.id}
+              onClick={() => setItemOpen(index)}
+              className={`${
+                itemOpen == index ? "w-2/4" : "w-1/4"
+              } duration-300 cursor-pointer`}
+            >
+              <Link to={itemOpen == index ? item.path : ""}>
+                <Image
+                  imageLink={item.image}
+                  altText={item.imageAltText}
+                  className={`w-full rounded-[6px] object-cover h-[100%] duration-300 ${
+                    itemOpen == index ? "object-left" : "object-[15%]"
+                  }`}
+                />
+              </Link>
+            </div>
+          ))}
         </Flex>
       </Container>
     </section>

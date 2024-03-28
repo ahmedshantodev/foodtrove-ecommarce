@@ -15,7 +15,7 @@ import sideImage3 from "../../../public/images/side-image-3.png";
 import one from "../../../public/images/one.png";
 import two from "../../../public/images/two.png";
 import three from "../../../public/images/three.png";
-
+import SectionHeader from "../layout/SectionHeader";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 
@@ -40,6 +40,7 @@ const PopulerProducts = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
+    rtl: true,
     beforeChange: (prev, next) => {
       setDotActive(next);
     },
@@ -101,20 +102,13 @@ const PopulerProducts = () => {
         className={"absolute top-[92%] right-[4%] animate-pulse"}
       />
       <Container>
-        <div className="text-center">
-          <Heading
-            text={"populer products"}
-            className=" font-arial font-bold text-[32px] mb-4 capitalize"
-          />
-          <Paragraph
-            text={
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore lacus vel facilisis."
-            }
-            className={
-              "font-poppins text-sm text-secondary-text w-[595px] mx-auto mb-8"
-            }
-          />
-        </div>
+        <SectionHeader
+          className={"mb-8"}
+          heading={"Populer Products"}
+          paragraph={
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore lacus vel facilisis."
+          }
+        />
         <Flex className={"justify-between gap-x-6"}>
           <div className="w-[25%] ">
             <div className="mb-3">
